@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.navBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/* margin: 16px 0; */
+	background-color: #fff;
+	color: #181818;
+	border-bottom: 1px solid #afafaf;
+	@media (max-width: 768px) {
+		justify-content: space-between;
+	}
+}
+
+.navLinks a {
+	color: #181818;
+}
+
+.mainLogo {
+	height: 48px;
+	padding: 0 16px;
+}
+
+.menu {
+	display: flex;
+	gap: 1em;
+	font-size: 16px;
+}
+
+.menu li:hover {
+	background-color: #abafaf;
+	/* border-radius: 4px; */
+	transition: 1s ease;
+}
+
+.menu li {
+	align-self: center;
+	padding: 16px;
+}
+
+.hamburgerMenu {
+	position: relative;
+}
+
+.dropdown {
+	background-color: #abafaf;
+	padding: 1em 0;
+	position: absolute;
+	display: none;
+	border-radius: 8px;
+	top: 35px;
+}
+
+.dropdown li + li {
+	margin-top: 10px;
+}
+
+.dropdown li {
+	padding: 0.5em 1em;
+	width: 8em;
+	text-align: center;
+}
+
+.dropdown li:hover {
+	background-color: #abafaf;
+}
+
+.hamburgerMenu:hover .dropdown {
+	display: block;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.hamburger {
+	display: none;
+	font-size: 24px;
+	user-select: none;
+	padding: 0px 16px;
+}
+
+@media (max-width: 768px) {
+	.menu {
+		display: none;
+		position: absolute;
+		background-color: #fff;
+		right: 0;
+		left: 0;
+		text-align: center;
+		border-bottom: 1px solid #afafaf;
+		margin: 12px 0;
+		padding: 8px 0;
+	}
+
+	.menu li:hover {
+		display: block;
+		background-color: #abafaf;
+		transition: 1s ease;
+	}
+
+	.menu li {
+		align-self: center;
+		padding: 8px;
+	}
+
+	.menu li + li {
+		margin-top: 8px;
+	}
+
+	input[type="checkbox"]:checked ~ .menu {
+		display: block;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.dropdown {
+		left: 50%;
+		top: 30px;
+		transform: translateX(35%);
+	}
+
+	.dropdown li:hover {
+		background-color: #4c9e9e;
+	}
+}
